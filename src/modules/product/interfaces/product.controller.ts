@@ -16,6 +16,7 @@ export class ProductController {
 
   @Post()
   async create(@Body() dto: CreateProduct): Promise<Product> {
+    console.log('--------------body recu:', dto);
     const newProduct = new Product(
       uuidv4(),
       dto.clientId,
